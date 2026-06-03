@@ -1,10 +1,266 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DriveX Motors</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: #0b0f1a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 60px;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #6c8cff;
+    }
+
+    .btn {
+      background: #6c8cff;
+      padding: 10px 18px;
+      border-radius: 10px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #4f6fff;
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 60px;
+    }
+
+    .hero-text {
+      max-width: 520px;
+    }
+
+    .hero-text h1 {
+      font-size: 52px;
+      line-height: 1.1;
+    }
+
+    .hero-text h1 span {
+      color: #6c8cff;
+    }
+
+    .hero-text p {
+      margin-top: 18px;
+      color: #b3b3b3;
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      margin-top: 25px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid #333;
+    }
+
+    .car-img {
+      width: 520px;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+    }
+
+    /* FEATURES */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 60px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #6c8cff;
+    }
+
+    /* CARS */
+    .section-title {
+      padding: 0 60px;
+      font-size: 28px;
+      margin-top: 40px;
+    }
+
+    .cars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 30px 60px 80px;
+    }
+
+    .car {
+      background: #11182b;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #1f2a44;
+      transition: 0.3s;
+    }
+
+    .car:hover {
+      transform: translateY(-5px);
+    }
+
+    .car img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .car-info {
+      padding: 15px;
+    }
+
+    .price {
+      color: #6c8cff;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #777;
+      border-top: 1px solid #1f2a44;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .car-img {
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      .features, .cars {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      nav {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hello 👋</h1>
-  <p>This is my website on GitHub Pages.</p>
+
+  <nav>
+    <div class="logo">Drive<span>X</span></div>
+    <button class="btn">Browse Cars</button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Find Your Dream <span>Car</span> Today</h1>
+      <p>Premium selection of luxury, sports, and everyday vehicles at unbeatable prices. Drive the future, today.</p>
+      <div class="hero-actions">
+        <button class="btn">Explore Inventory</button>
+        <button class="btn secondary">Sell Your Car</button>
+      </div>
+    </div>
+
+    <img class="car-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80" />
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <h3>Verified Listings</h3>
+      <p>Every vehicle is inspected and verified for quality and performance.</p>
+    </div>
+
+    <div class="card">
+      <h3>Best Prices</h3>
+      <p>We compare thousands of listings to guarantee the best deal.</p>
+    </div>
+
+    <div class="card">
+      <h3>Fast Delivery</h3>
+      <p>Get your car delivered straight to your door within days.</p>
+    </div>
+  </section>
+
+  <h2 class="section-title">Featured Cars</h2>
+
+  <section class="cars">
+
+    <div class="car">
+      <img src="https://images.unsplash.com/photo-1511910849309-0dffb8785146?auto=format&fit=crop&w=1000&q=80">
+      <div class="car-info">
+        <h3>BMW M4 Coupe</h3>
+        <p class="price">$72,000</p>
+      </div>
+    </div>
+
+    <div class="car">
+      <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1000&q=80">
+      <div class="car-info">
+        <h3>Audi R8</h3>
+        <p class="price">$148,000</p>
+      </div>
+    </div>
+
+    <div class="car">
+      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1000&q=80">
+      <div class="car-info">
+        <h3>Mercedes AMG GT</h3>
+        <p class="price">$120,000</p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 DriveX Motors — Built for performance & style
+  </footer>
+
 </body>
 </html>
